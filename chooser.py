@@ -28,6 +28,7 @@ def main(knew):
         if questtype == 0:
             a = len(dekli)-1
             b = random.randint(0,a)
+            splitted = dekli[b]
             question = dekli[b]
             caption = "Welche Deklination ist das?"
             dekli.pop(b)

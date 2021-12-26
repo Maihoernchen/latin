@@ -1,7 +1,0 @@
-stat
-sum
-es
-est
-sumus
-estis
-sunt

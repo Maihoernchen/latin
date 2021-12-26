@@ -5,21 +5,21 @@ konju = []
 vokab = []
 gramm = []
 
-d = open("C:\\Users\Atom\Documents\School fuckujd\latein\latin_stuff\dekli.txt", "r")
+d = open("./dekli.txt", "r")
 for x in d:
-  dekli.append(x)
+    dekli.append(x)
 
-k = open("C:\\Users\Atom\Documents\School fuckujd\latein\latin_stuff\konju.txt", "r")
+k = open("./konju.txt", "r")
 for x in k:
-  konju.append(x)
+    konju.append(x)
 
-v = open("C:\\Users\Atom\Documents\School fuckujd\latein\latin_stuff\\vokab.txt", "r")
+v = open("./vokab.txt", "r")
 for x in v:
-  vokab.append(x)
+    vokab.append(x)
 
-g = open("C:\\Users\Atom\Documents\School fuckujd\latein\latin_stuff\gramm.txt", "r")
+g = open("./gramm.txt", "r")
 for x in g:
-  gramm.append(x)
+    gramm.append(x)
 
 print(dekli,konju,gramm,vokab)
 def main(knew):
@@ -27,8 +27,10 @@ def main(knew):
         questtype = random.randint(0,3)
         if questtype == 0:
             a = len(dekli)-1
-            question = dekli[random.randint(0,a)]
+            b = random.randint(0,a)
+            question = dekli[b]
             caption = "Welche Deklination ist das?"
+            dekli.pop(b)
         elif questtype == 1:
             a = len(konju)-1
             question = konju[random.randint(0,len(konju)-1)]

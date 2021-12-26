@@ -31,20 +31,30 @@ def main(knew):
             question = dekli[b]
             caption = "Welche Deklination ist das?"
             dekli.pop(b)
+            question.replace('\n','')
         elif questtype == 1:
             a = len(konju)-1
-            question = konju[random.randint(0,len(konju)-1)]
+            b = random.randint(0,a)
+            question = konju[b]
             caption = "Welche Konjugation ist das?"
+            dekli.pop(b)
+            question.replace('\n','')
         elif questtype == 2:
             a = len(vokab)-1
-            question = vokab[random.randint(0,len(vokab)-1)]
+            b = random.randint(0,a)
+            question = vokab[b]
             caption = "Was ist die deutsche Überseztung von...?"
+            dekli.pop(b)
+            question.replace('\n','')
         else:
             a = len(gramm)-1
-            question = gramm[random.randint(0,len(gramm)-1)]
-            caption = "Worum handelt es sich hier"
+            b = random.randint(0,a)
+            question = gramm[b]
+            caption = "Worum handelt es sich hier?"
+            dekli.pop(b)
+            question.replace('\n','')
     else:
-        question = question
+        print("")
     return question, caption, answer
 
 print(main(True))

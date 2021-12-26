@@ -5,19 +5,19 @@ konju = []
 vokab = []
 gramm = []
 
-d = open("./dekli.txt", "r")
+d = open("./latin_stuff/dekli.txt", "r")
 for x in d:
     dekli.append(x)
 
-k = open("./konju.txt", "r")
+k = open("./latin_stuff/konju.txt", "r")
 for x in k:
     konju.append(x)
 
-v = open("./vokab.txt", "r")
+v = open("./latin_stuff/vokab.txt", "r")
 for x in v:
     vokab.append(x)
 
-g = open("./gramm.txt", "r")
+g = open("./latin_stuff/gramm.txt", "r")
 for x in g:
     gramm.append(x)
 

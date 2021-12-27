@@ -17,3 +17,4 @@ def main(caption, question, answer):
         display_surface.blit(question, (250,250))
         pygame.display.update()
     pygame.quit()
+    # return knew

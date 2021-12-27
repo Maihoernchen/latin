@@ -67,7 +67,7 @@ def main(knew):
                 for x in g:
                     gramm.append(x)
     else:
-        print("")
+        pass
     try:
         return question, caption, answer
     except:

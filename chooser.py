@@ -6,66 +6,44 @@ konju = []
 vokab = []
 gramm = []
 
+def restore_arrays(src,list):
+
+    l = open(src, "r")
+    for x in d:
+        list.append(x)
+    return list
+
+def pick_from_list(list,cap):
+
+    a = len(list)-1
+    b = random.randint(0,a)
+    splitted = list[b].split(" ", 1)
+    question = splitted[0]
+    answer = splitted[1]
+    caption = cap
+    list.pop(b)
+    answer = answer.replace('\n',''  )
+    return question,caption,answer
 
 def main():
     questtype = random.randint(0,3)
+    print(dekli,konju,gramm,vokab)
     if questtype == 0:
-        try:
-            a = len(dekli)-1
-            b = random.randint(0,a)
-            splitted = dekli[b].split(" ", 1)
-            question = splitted[0]
-            answer = splitted[1]
-            caption = "Welche Deklination ist das?"
-            dekli.pop(b)
-            answer = answer.replace('\n',''  )
-        except:
-            d = open("./latin_stuff/dekli.txt", "r")
-            for x in d:
-                dekli.append(x)
+        if len(dekli) == 0:
+            dekli = restore_arrays("./latin_stuff/dekli.txt",dekli)
+        question,caption,answer = pick_from_list(dekli,"Welche Deklination ist das?")
     elif questtype == 1:
-        try:
-            a = len(konju)-1
-            b = random.randint(0,a)
-            splitted = konju[b].split(" ", 1)
-            question = splitted[0]
-            answer = splitted[1]
-            caption = "Welche Konjugation ist das?"
-            konju.pop(b)
-            answer = answer.replace('\n',''  )
-        except:
-            k = open("./latin_stuff/konju.txt", "r")
-            for x in k:
-                konju.append(x)
+        if len(konju) == 0:
+            konju = restore_arrays("./latin_stuff/konju.txt",konju)
+        question,caption,answer = pick_from_list(konju,"Welche Konjugation ist das?")
     elif questtype == 2:
-        try:
-            a = len(vokab)-1
-            b = random.randint(0,a)
-            splitted = vokab[b].split(" ", 1)
-            question = splitted[0]
-            answer = splitted[1]
-            caption = "Was ist die deutsche Überseztung von...?"
-            vokab.pop(b)
-            answer = answer.replace('\n',''  )
-        except:
-            v = open("./latin_stuff/vokab.txt", "r")
-            for x in v:
-                vokab.append(x)
+        if len(vokab) > 0:
+            vokab = restore_arrays("./latin_stuff/vokab.txt",vokab)
+        question,caption,answer = pick_from_list(vokab,"Wie heißt das auf Deutsch?")
     else:
-        try:
-            a = len(gramm)-1
-            b = random.randint(0,a)
-            splitted = gramm[b].split(" ", 1)
-            question = splitted[0]
-            answer = splitted[1]
-            caption = "Worum handelt es sich hier?"
-            gramm.pop(b)
-            answer = answer.replace('\n',''  )
-        except:
-            g = open("./latin_stuff/gramm.txt", "r")
-            for x in g:
-                gramm.append(x)
-    try:
-        return question, caption, answer
-    except:
-        pass
+        if len(gramm) == 0:
+            gramm = restore_arrays("./latin_stuff/gramm.txt",gramm)
+        question,caption,answer = pick_from_list(gramm,"Worum handelt es sich hier?")
+    return question, caption, answer
+
+print(main())

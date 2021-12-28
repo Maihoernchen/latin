@@ -1,4 +1,4 @@
-import gui as gui
+aimport gui as gui
 import chooser as choose
 import time
 

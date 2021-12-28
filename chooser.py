@@ -1,21 +1,19 @@
 import random
 import time
 
-dekli = []
-konju = []
-vokab = []
-gramm = []
+
 
 def restore_arrays(src,list):
 
     l = open(src, "r")
-    for x in d:
+    for x in l:
         list.append(x)
     return list
 
 def pick_from_list(list,cap):
 
     a = len(list)-1
+    print(a)
     b = random.randint(0,a)
     splitted = list[b].split(" ", 1)
     question = splitted[0]
@@ -26,8 +24,11 @@ def pick_from_list(list,cap):
     return question,caption,answer
 
 def main():
+    dekli = []
+    konju = []
+    vokab = []
+    gramm = []
     questtype = random.randint(0,3)
-    print(dekli,konju,gramm,vokab)
     if questtype == 0:
         if len(dekli) == 0:
             dekli = restore_arrays("./latin_stuff/dekli.txt",dekli)
@@ -37,7 +38,7 @@ def main():
             konju = restore_arrays("./latin_stuff/konju.txt",konju)
         question,caption,answer = pick_from_list(konju,"Welche Konjugation ist das?")
     elif questtype == 2:
-        if len(vokab) > 0:
+        if len(vokab) == 0:
             vokab = restore_arrays("./latin_stuff/vokab.txt",vokab)
         question,caption,answer = pick_from_list(vokab,"Wie heißt das auf Deutsch?")
     else:
@@ -45,5 +46,3 @@ def main():
             gramm = restore_arrays("./latin_stuff/gramm.txt",gramm)
         question,caption,answer = pick_from_list(gramm,"Worum handelt es sich hier?")
     return question, caption, answer
-
-print(main())

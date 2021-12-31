@@ -1,5 +1,5 @@
-Servae Genitiv
-Servam Akkusativ
-Servas Vokativ
-Servus Nominativ
-Servum Akkusativ
+Servae-Genitiv
+Servam-Akkusativ
+Servas-Vokativ
+Servus-Nominativ
+Servum-Akkusativ

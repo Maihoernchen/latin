@@ -40,5 +40,7 @@ def main(caption, question, opt1, opt2, opt3, opt4):
                     ans = 3
                 elif event.key == pygame.K_4:
                     ans = 4
+                else:
+                    break
                 pygame.quit()
                 return ans

@@ -14,4 +14,4 @@ while True:
     else:
         question, caption, answer, questtype = choose.main()
         opt1,opt2,opt3,opt4,ans = wrong.main(questtype, answer)
-    time.sleep(300)
+    time.sleep(3)

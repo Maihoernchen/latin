@@ -16,9 +16,6 @@ def main(caption, question, opt1, opt2, opt3, opt4):
     opt3 = "3: " + opt3
     opt4 = "4: " + opt4
     while run:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                run = False
         text1 = font1.render(question, True, (250, 250, 250))
         text2 = font2.render(opt1, False, (250,250,250))
         text3 = font2.render(opt2, False, (250,250,250))
@@ -31,6 +28,17 @@ def main(caption, question, opt1, opt2, opt3, opt4):
         WIN.blit(text4, (30,110))
         WIN.blit(text5, (30,130))
         pygame.display.update()
-
-    pygame.quit()
-    return True
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1:
+                    ans = 1
+                elif event.key == pygame.K_2:
+                    ans = 2
+                elif event.key == pygame.K_3:
+                    ans = 3
+                elif event.key == pygame.K_4:
+                    ans = 4
+                pygame.quit()
+                return ans

@@ -1,3 +1,5 @@
-petere aufsuchen,erstreben,verlangen
-pater Vater
-filius Sohn
+petere-aufsuchen,erstreben,verlangen
+pater-Vater
+filius-Sohn
+turba-Menschenmenge,Lärm
+lacrima-Träne

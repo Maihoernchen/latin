@@ -1,7 +1,7 @@
-stat 3PS
-sum 1PS
-es 2PS
-est 3PS
-sumus 1PP
-estis 2PP
-sunt 3PP
+stat-3PS
+sum-1PS
+es-2PS
+est-3PS
+sumus-1PP
+estis-2PP
+sunt-3PP

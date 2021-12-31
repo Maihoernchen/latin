@@ -13,9 +13,8 @@ def restore_arrays(src,list):
 def pick_from_list(list,cap):
 
     a = len(list)-1
-    print(a)
     b = random.randint(0,a)
-    splitted = list[b].split(" ", 1)
+    splitted = list[b].split("-", 1)
     question = splitted[0]
     answer = splitted[1]
     caption = cap
@@ -45,4 +44,4 @@ def main():
         if len(gramm) == 0:
             gramm = restore_arrays("./latin_stuff/gramm.txt",gramm)
         question,caption,answer = pick_from_list(gramm,"Worum handelt es sich hier?")
-    return question, caption, answer
+    return question, caption, answer, questtype

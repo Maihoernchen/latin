@@ -1,5 +1,48 @@
-Servae-Genitiv
-Servam-Akkusativ
-Servas-Vokativ
 Servus-Nominativ
+Servi-Genitiv
+Servo-Dativ
 Servum-Akkusativ
+Serve-Vokativ
+Servo-Ablativ
+Servi-Nominativ Plural
+Servorum-Genitiv Plural
+Servis-Dativ Plural
+Servos-Akkusativ Plural
+Servi-Vokativ Plural
+Servis-Ablativ Plural
+Templum-Nominativ
+Templi-Genitiv
+Templo-Dativ
+Templum-Akkusativ
+Templum-Vokativ
+Templo-Ablativ
+Templa-Nominativ Plural
+Templorum-Genitiv Plural
+Templis-Dativ Plural
+Templa-Akkusativ Plural
+Templa-Vokativ Plural
+Templis-Ablativ Plural
+Serva-Nominativ
+Servae-Genitiv
+Servae-Dativ
+Servam-Akkusativ
+Serva-Vokativ
+Serva-Ablativ
+Servae-Nominativ Plural
+Servarum-Genitiv Plural
+Servis-Dativ Plural
+Servas-Akkusativ Plural
+Serva-Vokativ Plural
+Servis-Ablativ Plural
+Victor-Nominativ
+Victoris-Genitiv
+Victori-Dativ
+Victorem-Akkusativ
+Victor-Vokativ
+Victore-Ablativ
+Victores-Nominativ Plural
+Victorum-Genitiv Plural
+Victoribus-Dativ Plural
+Victores-Akkusativ Plural
+Victores-Vokativ Plural
+Victoribus-Ablativ Plural

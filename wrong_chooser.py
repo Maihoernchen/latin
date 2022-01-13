@@ -16,10 +16,9 @@ def main(questtype,answer):
 
 def sub(answer,list):
     options = ["","","",""]
+    for i in range(len(options)):
+        options[i] = subsub(list,answer,options)
     options[0] = answer
-    options[1] = subsub(list,answer)
-    options[2] = subsub(list,answer)
-    options[3] = subsub(list,answer)
     random.shuffle(options)
 
     if options[0] == answer:
@@ -33,7 +32,7 @@ def sub(answer,list):
 
     return options,ans
 
-def subsub(list,answer):
+def subsub(list,answer,options):
     k = len(list)-1
     w = random.randint(0,k)
     splitted = list[w].split("-", 1)

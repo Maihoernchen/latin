@@ -1,10 +1,22 @@
 import pygame
+# fuckukyle
 
+def button(screen, position, text):
+    font = pygame.font.SysFont("Arial", 50)
+    text_render = font.render(text, 1, (255, 0, 0))
+    x, y, w , h = text_render.get_rect()
+    x, y = position
+    pygame.draw.line(screen, (150, 150, 150), (x, y), (x + w , y), 5)
+    pygame.draw.line(screen, (150, 150, 150), (x, y - 2), (x, y + h), 5)
+    pygame.draw.line(screen, (50, 50, 50), (x, y + h), (x + w , y + h), 5)
+    pygame.draw.line(screen, (50, 50, 50), (x + w , y+h), [x + w , y], 5)
+    pygame.draw.rect(screen, (100, 100, 100), (x, y, w , h))
+    return screen.blit(text_render, (x, y))
 
 def main(caption, question, opt1, opt2, opt3, opt4):
     z = len(question)
     WIDTH, HEIGHT = 100+45*z,100+35*z
-    WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+    WIN = pygame.display.set_mode((1620, 960))
     pygame.font.init()
     pygame.font.get_init()
     font1 = pygame.font.SysFont('Arial', 40)
@@ -15,32 +27,37 @@ def main(caption, question, opt1, opt2, opt3, opt4):
     opt2 = "2: " + opt2
     opt3 = "3: " + opt3
     opt4 = "4: " + opt4
+    WIN.fill((0,0,0))
+    b1 = button(WIN, (0, 300), opt1)
+    b2 = button(WIN, (0, 400), opt2)
+    b3 = button(WIN, (0, 500), opt3)
+    b4 = button(WIN, (0, 600), opt4)
     while run:
         text1 = font1.render(question, True, (250, 250, 250))
         text2 = font2.render(opt1, False, (250,250,250))
         text3 = font2.render(opt2, False, (250,250,250))
         text4 = font2.render(opt3, False, (250,250,250))
         text5 = font2.render(opt4, False, (250,250,250))
-        WIN.fill((0,179,89))
-        WIN.blit(text1, (20,20))
-        WIN.blit(text2, (30,70))
-        WIN.blit(text3, (30,90))
-        WIN.blit(text4, (30,110))
-        WIN.blit(text5, (30,130))
+        WIN.blit(text1, (50,50))
         pygame.display.update()
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                run = False
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_1:
-                    ans = 1
-                elif event.key == pygame.K_2:
-                    ans = 2
-                elif event.key == pygame.K_3:
-                    ans = 3
-                elif event.key == pygame.K_4:
-                    ans = 4
-                else:
-                    break
-                pygame.quit()
-                return ans
+                key_to_start = event.key == pygame.K_s or event.key == pygame.K_RIGHT or event.key == pygame.K_UP
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                if key_to_start:
+                    print("okay lets goo")
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    if b1.collidepoint(pygame.mouse.get_pos()):
+                        ans = 1
+                    elif b2.collidepoint(pygame.mouse.get_pos()):
+                        ans = 2
+                    elif b3.collidepoint(pygame.mouse.get_pos()):
+                        ans = 3
+                    elif b4.collidepoint(pygame.mouse.get_pos()):
+                        ans = 4
+                    else:
+                        break
+                    pygame.quit
+                    return ans
+        pygame.display.update()

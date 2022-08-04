@@ -1,0 +1,31 @@
+{
+    "deklinationen": {
+        "Servus": "Nominativ",
+        "Servi" : ["Genitiv","Nominativ Plural","Vokativ Plural"],
+        "Servo" : ["Dativ","Ablativ"],
+        "Servum": "Akkusativ",
+        "Serve" : "Vokativ",
+        "Servorum" : "Genitiv Plural",
+        "Servis" : ["Dativ Plural","Ablativ Plural"],
+        "Servos" : "Akkusativ Plural",
+        "Templum" : ["Nominativ","Akkusativ","Vokativ"],
+        "Templi":"Genitiv",
+        "Templo":["Dativ","Ablativ"],
+        "Templa":["Nominativ Plural","Akkusativ Plural","Vokativ Plural"],
+        "Templorum":"Genitiv Plural",
+        "Templis":["Dativ Plural","Ablativ Plural"],
+        "Serva":["Nominativ","Ablativ","Vokativ","Vokativ Plural"],
+        "Servae":["Genitiv","Dativ","Nominativ Plural"],
+        "Servam":"Akkusativ",
+        "Servarum":"Genitiv Plural",
+        "Servas":"Akkusativ Plural",
+        "Victor":["Nominativ","Vokativ"],
+        "Victoris":"Genitiv",
+        "Victori":"Dativ",
+        "Victorem":"Akkusativ",
+        "Victore":"Ablativ",
+        "Victores":["Nominativ Plural","Akkusativ Plural","Vokativ Plural"],
+        "Victorum":"Genitiv Plural",
+        "Victoribus":["Dativ Plural","Ablativ Plural"]
+    }
+}

@@ -13,6 +13,8 @@ def button(screen, position, text):
     pygame.draw.rect(screen, (100, 100, 100), (x, y, w , h))
     return screen.blit(text_render, (x, y))
 
+def quit():
+    pygame.quit()
 def main(caption, question, answers):
     z = len(question)
     WIDTH, HEIGHT = 100+45*z,100+35*z
@@ -23,15 +25,23 @@ def main(caption, question, answers):
     font2 = pygame.font.SysFont('Arial', 20)
     pygame.display.set_caption(caption)
     run=True
-    opt1 = "1: " + answers[0]
-    opt2 = "2: " + answers[1]
-    opt3 = "3: " + answers[2]
-    opt4 = "4: " + answers[3]
+    ansis = answers
+    for i in range(len(ansis)):
+        if type(ansis[i]) is list:
+            strTemp = ""
+            for x in range(len(ansis[i])):
+                
+                strTemp = strTemp + ansis[i][x] + "     "
+            ansis[i] = strTemp
+    opt1 = ansis[0]
+    opt2 = ansis[1]
+    opt3 = ansis[2]
+    opt4 = ansis[3]
     WIN.fill((0,0,0))
-    b1 = button(WIN, (0, 300), opt1)
-    b2 = button(WIN, (0, 400), opt2)
-    b3 = button(WIN, (0, 500), opt3)
-    b4 = button(WIN, (0, 600), opt4)
+    b1 = button(WIN, (WIDTH/2, 300), opt1)
+    b2 = button(WIN, (WIDTH/2, 400), opt2)
+    b3 = button(WIN, (WIDTH/2, 500), opt3)
+    b4 = button(WIN, (WIDTH/2, 600), opt4)
     while run:
         text1 = font1.render(question, True, (250, 250, 250))
         text2 = font2.render(opt1, False, (250,250,250))
@@ -49,15 +59,16 @@ def main(caption, question, answers):
                     print("okay lets goo")
             if event.type == pygame.MOUSEBUTTONDOWN:
                     if b1.collidepoint(pygame.mouse.get_pos()):
-                        ans = 1
+                        ans = 0
                     elif b2.collidepoint(pygame.mouse.get_pos()):
-                        ans = 2
+                        ans = 1
                     elif b3.collidepoint(pygame.mouse.get_pos()):
-                        ans = 3
+                        ans = 2
                     elif b4.collidepoint(pygame.mouse.get_pos()):
-                        ans = 4
+                        ans = 3
                     else:
                         break
                     pygame.quit
-                    return ans
+                    print(answers[ans])
+                    return answers[ans]
         pygame.display.update()

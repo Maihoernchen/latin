@@ -1,7 +1,6 @@
 import gui as gui
 import chooser as choose
 import time
-import wrong_chooser as wrong
 
 i = 0
 question, caption, answer, answers = choose.main()
@@ -13,5 +12,6 @@ while True:
         else:
             question, caption, answer, answers = choose.main()
             i = i+1
+    gui.quit()
     time.sleep(600)
     i = 0

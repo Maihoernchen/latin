@@ -3,7 +3,7 @@ import time
 import json
 
 
-def restore_arrays(src,list):
+def openfile(src):
 
     l = open(src, "r")
     l = json.load(l)
@@ -29,7 +29,6 @@ def pick_from_list(dict,cap):
             list.pop(b)
             i+=1
     random.shuffle(answers)
-    print(answer, "\n",answers)
     return question,caption,answer,answers
 
 def main():
@@ -40,22 +39,22 @@ def main():
     questtype = random.randint(0,3)
     if questtype == 0:
         if len(dekli) == 0:
-            dekli = restore_arrays("./latin_stuff/dekli.json",dekli)
+            dekli = openfile("./latin_stuff/dekli.json")
         list = dekli
         cap = "Welche Deklination ist das?"
     elif questtype == 1:
         if len(konju) == 0:
-            konju = restore_arrays("./latin_stuff/konju.json",konju)
+            konju = openfile("./latin_stuff/konju.json")
         list = konju
         cap = "Welche Konjugation ist das?"
     elif questtype == 2:
         if len(vokab) == 0:
-            vokab = restore_arrays("./latin_stuff/vokab.json",vokab)
+            vokab = openfile("./latin_stuff/vokab.json")
         list = vokab
         cap = "Wie heißt das auf Deutsch?"
     else:
         if len(gramm) == 0:
-            gramm = restore_arrays("./latin_stuff/gramm.json",gramm)
+            gramm = openfile("./latin_stuff/gramm.json")
         list = gramm
         cap = "Worum handelt es sich hier?"
     question,caption,answer,answers = pick_from_list(list,cap)

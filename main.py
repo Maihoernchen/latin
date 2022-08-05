@@ -4,16 +4,14 @@ import time
 import wrong_chooser as wrong
 
 i = 0
-question, caption, answer, questtype = choose.main()
-opt1,opt2,opt3,opt4,ans = wrong.main(questtype, answer)
+question, caption, answer, answers = choose.main()
 
 while True:
     while i != 5:
-        if ans != gui.main(caption, question, opt1, opt2, opt3, opt4):
+        if answer != gui.main(caption, question, answers):
             pass
         else:
-            question, caption, answer, questtype = choose.main()
-            opt1,opt2,opt3,opt4,ans = wrong.main(questtype, answer)
+            question, caption, answer, answers = choose.main()
             i = i+1
     time.sleep(600)
     i = 0

@@ -1,17 +1,19 @@
-petere-aufsuchen,erstreben,verlangen
-pater-Vater
-filius-Sohn
-turba-Menschenmenge,Lärm
-lacrima-Träne
-puer-Junge,Bub
-mittere,mitto-loslassen,schicken,werfen
-domina-Herrin
-iubere,iubeo-anordnen,befehlen
-emere,emo-kaufen
-serva-Sklavin
-adesse,adsum-da sein,helfen
-dubitare,dubito-zögern
-parare,paro-bereiten,vorbereiten,vorhaben,erwerben
-debere,debeo-müssen,sollen,schulden
-ornare,orno-schmücken
-mensa-Tisch
+{
+    "petere":"aufsuchen,erstreben,verlangen",
+    "pater":"Vater",
+    "filius":"Sohn",
+    "turba":"Menschenmenge,Lärm",
+    "lacrima":"Träne",
+    "puer":"Junge,Bub",
+    "mittere,mitto":"loslassen,schicken,werfen",
+    "domina":"Herrin",
+    "iubere,iubeo":"anordnen,befehlen",
+    "emere,emo":"kaufen",
+    "serva":"Sklavin",
+    "adesse,adsum":"da sein,helfen",
+    "dubitare,dubito":"zögern",
+    "parare,paro":"bereiten,vorbereiten,vorhaben,erwerben",
+    "debere,debeo":"müssen,sollen,schulden",
+    "ornare,orno":"schmücken",
+    "mensa":"Tisch"
+}

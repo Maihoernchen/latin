@@ -1,26 +1,36 @@
 import random
 import time
-
+import json
 
 
 def restore_arrays(src,list):
 
     l = open(src, "r")
-    for x in l:
+    l = json.load(l)
+    return l
+
+def pick_from_list(dict,cap):
+    list = []
+    for x in dict:
         list.append(x)
-    return list
-
-def pick_from_list(list,cap):
-
     a = len(list)-1
     b = random.randint(0,a)
-    splitted = list[b].split("-", 1)
-    question = splitted[0]
-    answer = splitted[1]
+    question = list[b]
+    answer = dict[question]
     caption = cap
     list.pop(b)
-    answer = answer.replace('\n',''  )
-    return question,caption,answer
+    answers = [answer]
+    i = 0
+    while i < 3:
+        a = len(list)-1
+        b = random.randint(0,a)
+        if dict[list[b]] not in answers:
+            answers.append(dict[list[b]])
+            list.pop(b)
+            i+=1
+    random.shuffle(answers)
+    print(answer, "\n",answers)
+    return question,caption,answer,answers
 
 def main():
     dekli = []
@@ -30,18 +40,23 @@ def main():
     questtype = random.randint(0,3)
     if questtype == 0:
         if len(dekli) == 0:
-            dekli = restore_arrays("./latin_stuff/dekli.txt",dekli)
-        question,caption,answer = pick_from_list(dekli,"Welche Deklination ist das?")
+            dekli = restore_arrays("./latin_stuff/dekli.json",dekli)
+        list = dekli
+        cap = "Welche Deklination ist das?"
     elif questtype == 1:
         if len(konju) == 0:
-            konju = restore_arrays("./latin_stuff/konju.txt",konju)
-        question,caption,answer = pick_from_list(konju,"Welche Konjugation ist das?")
+            konju = restore_arrays("./latin_stuff/konju.json",konju)
+        list = konju
+        cap = "Welche Konjugation ist das?"
     elif questtype == 2:
         if len(vokab) == 0:
-            vokab = restore_arrays("./latin_stuff/vokab.txt",vokab)
-        question,caption,answer = pick_from_list(vokab,"Wie heißt das auf Deutsch?")
+            vokab = restore_arrays("./latin_stuff/vokab.json",vokab)
+        list = vokab
+        cap = "Wie heißt das auf Deutsch?"
     else:
         if len(gramm) == 0:
-            gramm = restore_arrays("./latin_stuff/gramm.txt",gramm)
-        question,caption,answer = pick_from_list(gramm,"Worum handelt es sich hier?")
-    return question, caption, answer, questtype
+            gramm = restore_arrays("./latin_stuff/gramm.json",gramm)
+        list = gramm
+        cap = "Worum handelt es sich hier?"
+    question,caption,answer,answers = pick_from_list(list,cap)
+    return question, caption, answer, answers

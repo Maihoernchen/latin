@@ -1,7 +1,9 @@
-stavisse-Perfekt
-corripuevisse-Perfekt
-dominam servus est-Dativus Possesivus
-Hic turba stat et clamat-Normalform
-Audite!-Imperativ Plural
-sta!-Imperativ
-Sed Sabini venire scio.-AcI
+{
+    "stavisse":"Perfekt",
+    "corripuevisse":"Perfekt",
+    "dominam servus est":"Dativus Possesivus",
+    "Hic turba stat et clamat":"Normalform",
+    "Audite!":"Imperativ Plural",
+    "sta!":"Imperativ",
+    "Sed Sabini venire scio.":"AcI"
+}

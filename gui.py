@@ -13,7 +13,7 @@ def button(screen, position, text):
     pygame.draw.rect(screen, (100, 100, 100), (x, y, w , h))
     return screen.blit(text_render, (x, y))
 
-def main(caption, question, opt1, opt2, opt3, opt4):
+def main(caption, question, answers):
     z = len(question)
     WIDTH, HEIGHT = 100+45*z,100+35*z
     WIN = pygame.display.set_mode((1620, 960))
@@ -23,10 +23,10 @@ def main(caption, question, opt1, opt2, opt3, opt4):
     font2 = pygame.font.SysFont('Arial', 20)
     pygame.display.set_caption(caption)
     run=True
-    opt1 = "1: " + opt1
-    opt2 = "2: " + opt2
-    opt3 = "3: " + opt3
-    opt4 = "4: " + opt4
+    opt1 = "1: " + answers[0]
+    opt2 = "2: " + answers[1]
+    opt3 = "3: " + answers[2]
+    opt4 = "4: " + answers[3]
     WIN.fill((0,0,0))
     b1 = button(WIN, (0, 300), opt1)
     b2 = button(WIN, (0, 400), opt2)

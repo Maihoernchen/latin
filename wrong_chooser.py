@@ -1,7 +1,7 @@
 import random
 
 def main(questtype,answer):
-    af = ["./latin_stuff/dekli.txt","./latin_stuff/konju.txt","./latin_stuff/vokab.txt","./latin_stuff/gramm.txt"]
+    af = ["./latin_stuff/dekli.json","./latin_stuff/konju.json","./latin_stuff/vokab.json","./latin_stuff/gramm.json"]
     list = []
     src = af[questtype]
     l = open(src, "r")

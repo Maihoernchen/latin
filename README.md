@@ -1,7 +1,8 @@
 # Latin
 
 ## Requirements
-* pygame (install with "pip install pygame")
+* python3 (https://www.youtube.com/watch?v=Kn1HF3oD19c)
+* pygame (install with "pip install pygame" or "pip3 install pygame")
 
 ## Execution
 To execute the learning-programm execute the main.py-file with python3.

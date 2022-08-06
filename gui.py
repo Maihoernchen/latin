@@ -2,14 +2,22 @@ import pygame
 # fuckukyle
 
 def button(screen, WIDTH, HEIGHT, text):
+    if type(text) is list:
+        strTemp = ""
+        for x in range(len(text)):
+            if x == len(text)-1:
+                strTemp = strTemp + text[x]
+            else:
+                strTemp = strTemp + text[x] + ", "
+        text = strTemp
     font = pygame.font.SysFont("Arial", 50)
-    text_render = font.render(text, 1, (255, 0, 0))
+    text_render = font.render(text, 1, (0, 255, 255))
     x, y, w , h = text_render.get_rect(center=(WIDTH/2,HEIGHT/2))
     pygame.draw.line(screen, (150, 150, 150), (x, y), (x + w , y), 5)
     pygame.draw.line(screen, (150, 150, 150), (x, y - 2), (x, y + h), 5)
     pygame.draw.line(screen, (50, 50, 50), (x, y + h), (x + w , y + h), 5)
     pygame.draw.line(screen, (50, 50, 50), (x + w , y+h), [x + w , y], 5)
-    pygame.draw.rect(screen, (100, 100, 100), (x, y, w , h))
+    pygame.draw.rect(screen, (0, 0, 0), (x, y, w , h))
     return screen.blit(text_render, (x, y))
 
 def quit():
@@ -24,15 +32,6 @@ def main(caption, question, answers):
     font2 = pygame.font.SysFont('Arial', 20)
     pygame.display.set_caption(caption)
     run=True
-    for i in range(len(answers)):
-        if type(answers[i]) is list:
-            strTemp = ""
-            for x in range(len(answers[i])):
-                if x == len(answers[i])-1:
-                    strTemp = strTemp + answers[i][x]
-                else:
-                    strTemp = strTemp + answers[i][x] + ", "
-            answers[i] = strTemp
     opt1 = answers[0]
     opt2 = answers[1]
     opt3 = answers[2]
